@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
 import { MdAddAPhoto } from 'react-icons/md'
 import { ComponentInput, InputIcon, InputRoot } from './ui/input'
 import { CiSearch } from 'react-icons/ci'
+import { ImageContext } from '../context/ImageContext'
 
 export default function Header() {
+  const [searchTerm, setSearchTerm] = useState('')
+  const { searchImages } = useContext(ImageContext)
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const term = e.target.value
+    setSearchTerm(term)
+    searchImages(term)
+  }
+
   const links = [
     {
       name: 'Home',
@@ -18,6 +28,7 @@ export default function Header() {
       url: '/favoritos',
     },
   ]
+
   return (
     <header className="w-full h-20 bg-emerald-50 flex items-center justify-between px-28 py-4">
       <div className="flex w-full items-center">
@@ -37,7 +48,11 @@ export default function Header() {
         <InputIcon>
           <CiSearch className="text-emerald-50" size={30} />
         </InputIcon>
-        <ComponentInput placeholder="Busque suas imagens" />
+        <ComponentInput
+          value={searchTerm}
+          onChange={handleSearchChange}
+          placeholder="Busque suas imagens"
+        />
       </InputRoot>
     </header>
   )
