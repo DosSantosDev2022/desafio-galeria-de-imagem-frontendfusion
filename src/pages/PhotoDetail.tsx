@@ -12,7 +12,9 @@ export default function PhotoDetails() {
   return (
     <div className="w-full container px-28 mt-10 space-y-10">
       <div className="w-full border-b px-3 py-4">
-        <h1 className="text-emerald-950 font-bold text-2xl">Photo Details</h1>
+        <h1 className="text-emerald-950 font-bold text-2xl">
+          Detalhes da foto
+        </h1>
       </div>
       <div className="w-full h-full  px-2 py-3">
         <img
@@ -27,7 +29,7 @@ export default function PhotoDetails() {
             <p className="text-base font-light">Height: {image.height}</p>
             <Button variant="primary" sizes="full" asChild>
               <a href={image.url} target="_blank" rel="noopener noreferrer">
-                Ver imagem na fonte
+                Ver imagem no unsplash
               </a>
             </Button>
           </div>

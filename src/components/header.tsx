@@ -31,13 +31,16 @@ export default function Header() {
   ]
 
   return (
-    <header className="w-full h-20 bg-emerald-50 flex items-center justify-between px-28 py-4">
+    <header className="w-full lg:h-24 bg-zinc-50 flex flex-col gap-8 lg:flex-row items-center justify-between px-10 lg:px-28 py-4">
       <div className="flex w-full items-center">
         <MdAddAPhoto size={50} className="text-emerald-950" />
         <nav className="w-full">
           <ul className="flex items-center justify-center gap-6">
             {links.map((link) => (
-              <li key={link.name}>
+              <li
+                className="text-emerald-900 font-normal hover:bg-emerald-600 px-2 py-2.5 rounded-md duration-500 hover:text-zinc-50"
+                key={link.name}
+              >
                 <Link to={link.url}>{link.name}</Link>
               </li>
             ))}
@@ -45,7 +48,7 @@ export default function Header() {
         </nav>
       </div>
 
-      <InputRoot className="">
+      <InputRoot className="w-[426px] ">
         <InputIcon>
           <CiSearch className="text-emerald-50" size={30} />
         </InputIcon>

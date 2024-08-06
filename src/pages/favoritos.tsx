@@ -2,20 +2,38 @@ import React, { useContext } from 'react'
 
 import { ImageContext } from '../context/ImageContext'
 import { CardImage } from '../components/CardsImage'
+import { FaSpinner } from 'react-icons/fa'
 
 export default function FavoritosPage() {
   const { favorites, loading, error } = useContext(ImageContext)
-  console.log(favorites)
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error: {error.message}</p>
-  return (
-    <div className="w-full container px-28 mt-10 space-y-10">
-      <div className="w-full border px-3 py-4">
-        <h1 className="text-emerald-950 font-bold text-2xl">Favoritos</h1>
+
+  if (loading)
+    return (
+      <div className="w-full h-full flex items-center mt-14 gap-3 justify-center">
+        <p className="text-3xl font-bold text-emerald-800">Carregando</p>
+        <FaSpinner size={30} className="text-emerald-700 animate-spin" />
       </div>
-      <div className="w-full h-full border grid grid-cols-6 gap-4 p-3">
+    )
+  if (error)
+    return (
+      <div className="w-full h-full flex items-center justify-center">
+        <p className="text-lg font-medium text-red-800">
+          Error: {error.message}
+        </p>
+      </div>
+    )
+  return (
+    <div className="w-full  px-28 mt-10 space-y-10">
+      <div className="w-full bg-zinc-50 rounded-md border px-3 py-4">
+        <h1 className="text-emerald-950 font-bold text-3xl">Favoritos</h1>
+      </div>
+      <div className="w-full h-full  grid grid-cols-6 gap-4 p-3">
         {favorites.length === 0 ? (
-          <p>Nenhuma imagem favoritada</p>
+          <div className="w-full  flex items-center  gap-3 justify-center">
+            <p className="text-emerald-700 font-bold text-xl text-center w-full ">
+              Nenhuma imagem favoritada
+            </p>
+          </div>
         ) : (
           favorites.map((image) => (
             <CardImage

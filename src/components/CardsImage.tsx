@@ -46,7 +46,7 @@ export function CardImage({
     navigate(`/photo/${id}`)
   }
   return (
-    <Card className="col-span-2 h-full w-full ">
+    <Card className="lg:col-span-2 col-span-6 h-full w-full ">
       <CardContent className="w-full h-full space-y-3">
         <img
           onClick={handleClick}
