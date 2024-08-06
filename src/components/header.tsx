@@ -3,6 +3,7 @@ import { MdAddAPhoto } from 'react-icons/md'
 import { ComponentInput, InputIcon, InputRoot } from './ui/input'
 import { CiSearch } from 'react-icons/ci'
 import { ImageContext } from '../context/ImageContext'
+import { Link } from 'react-router-dom'
 
 export default function Header() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -37,7 +38,7 @@ export default function Header() {
           <ul className="flex items-center justify-center gap-6">
             {links.map((link) => (
               <li key={link.name}>
-                <a href={link.url}>{link.name}</a>
+                <Link to={link.url}>{link.name}</Link>
               </li>
             ))}
           </ul>
