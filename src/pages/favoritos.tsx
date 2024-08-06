@@ -23,7 +23,7 @@ export default function FavoritosPage() {
       </div>
     )
   return (
-    <div className="w-full  px-28 mt-10 space-y-10">
+    <div className="w-full  lg:px-28 px-10 mt-10 space-y-10 ">
       <div className="w-full bg-zinc-50 rounded-md border px-3 py-4">
         <h1 className="text-emerald-950 font-bold text-3xl">Favoritos</h1>
       </div>
