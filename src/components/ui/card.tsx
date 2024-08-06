@@ -56,7 +56,7 @@ const CardContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div ref={ref} className={twMerge('p-6 pt-0', className)} {...props} />
+  <div ref={ref} className={twMerge('px-3 py-4', className)} {...props} />
 ))
 
 CardContent.displayName = 'CardContent'
@@ -65,11 +65,7 @@ const CardFooter = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={twMerge('flex items-center p-6 pt-0', className)}
-    {...props}
-  />
+  <div ref={ref} className={twMerge('px-2 py-3 pt-0', className)} {...props} />
 ))
 CardFooter.displayName = 'CardFooter'
 
