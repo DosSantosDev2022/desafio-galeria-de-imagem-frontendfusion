@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from './Header'
+import { Header } from './header'
 
-const Layout = ({ children }) => {
+export function Layout({ children }) {
   return (
     <>
       <Header />
@@ -9,5 +9,3 @@ const Layout = ({ children }) => {
     </>
   )
 }
-
-export default Layout

@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-
 import { ImageContext } from '../context/ImageContext'
 import { CardImage } from '../components/CardsImage'
 import { FaSpinner } from 'react-icons/fa'

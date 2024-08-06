@@ -13,7 +13,7 @@ import {
   DropDownTrigger,
 } from './ui/dropdown'
 
-export default function Header() {
+export function Header() {
   const [searchTerm, setSearchTerm] = useState('')
   const { searchImages } = useContext(ImageContext)
 
