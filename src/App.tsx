@@ -3,7 +3,7 @@ import React from 'react-dom'
 function App() {
   return (
     <>
-      <main></main>
+      <main className="h-screen w-full"></main>
     </>
   )
 }
